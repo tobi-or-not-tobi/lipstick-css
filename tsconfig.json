@@ -18,7 +18,7 @@
     ],
     "paths": {
       "sample-components": [
-        "dist/sample-components"
+        "projects/sample-components/src/public_api"
       ]
     }
   }
