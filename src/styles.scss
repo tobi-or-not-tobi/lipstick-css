@@ -48,44 +48,44 @@ $secondary: #9d8792;
 // override bootstrap specific rules, using css vars
 // buttons
 .btn {
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius, $border-radius);
     &-primary {
-        background-color: var(--primary-color);
-        border-color: var(--primary-color);
+        background-color: var(--primary-color, $primary);
+        border-color: var(--primary-color, $primary);
         &:hover,
         &:not(:disabled):not(.disabled):active {
-            background-color: var(--primary-darken-color);
-            border-color: var(--primary-darken-color);
+            background-color: var(--primary-darken-color, darken($primary, 7.5%));
+            border-color: var(--primary-darken-color, darken($primary, 7.5%));
         }
     }
 
     &-secondary {
-        background-color: var(--secondary-color);
-        border-color: var(--secondary-color);
+        background-color: var(--secondary-color, $secondary);
+        border-color: var(--secondary-color, $secondary);
         &:hover,
         &:not(:disabled):not(.disabled):active {
-            background-color: var(--secondary-darken-color);
-            border-color: var(--secondary-darken-color);
+            background-color: var(--secondary-darken-color, darken($primary, 7.5%));
+            border-color: var(--secondary-darken-color, darken($primary, 7.5%));
         }
     }
 
     &-outline {
         &-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
+            color: var(--primary-color, $primary);
+            border-color: var(--primary-color, $primary);
             &:hover,
             &:not(:disabled):not(.disabled):active {
-                background-color: var(--primary-color);
-                border-color: var(--primary-darken-color);
+                background-color: var(--primary-color, $primary);
+                border-color: var(--primary-darken-color, darken($primary, 7.5%));
             }
         }
         &-secondary {
-            color: var(--secondary-color);
-            border-color: var(--secondary-color);
+            color: var(--secondary-color, $secondary);
+            border-color: var(--secondary-color, $secondary);
             &:hover,
             &:not(:disabled):not(.disabled):active {
-                background-color: var(--secondary-color);
-                border-color: var(--secondary-darken-color);
+                background-color: var(--secondary-color, $secondary);
+                border-color: var(--secondary-darken-color, darken($primary, 7.5%));
             }
         }
     }
@@ -94,46 +94,45 @@ $secondary: #9d8792;
 // text colors
 .text {
     &-primary {
-        color: var(--primary-color) !important;
+        color: var(--primary-color, $primary) !important;
     }
     &-secondary {
-        color: var(--secondary-color) !important;
+        color: var(--secondary-color, $secondary) !important;
     }
 }
 
 // badge
 .badge {
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius, $border-radius);
     &-primary {
-        background-color: var(--primary-color);
+        background-color: var(--primary-color, $primary);
     }
     &-secondary {
-        background-color: var(--secondary-color);
+        background-color: var(--secondary-color, $secondary);
     }
 }
 
 // border
 .border {
     &-primary {
-        border-color: var(--primary-color) !important;
+        border-color: var(--primary-color, $primary) !important;
     }
     &-secondary {
-        border-color: var(--secondary-color) !important;
+        border-color: var(--secondary-color, $secondary) !important;
     }
 }
 
 // carousel
 .carousel {
-    &-indicators .active {
-        background-color: var(--primary-color);
-    }
     &-caption {
-        color: var(--primary-color);
+        color: var(--primary-color, $primary);
     }
-
+    &-indicators .active {
+        background-color: var(--primary-color, $primary);
+    }
     &-control-prev-icon,
     &-control-next-icon {
-        border: solid 2px var(--primary-color);
+        border: solid 2px var(--primary-color, $primary);
         border-radius: 100px;
         background-origin: content-box;
         width: 30px;
