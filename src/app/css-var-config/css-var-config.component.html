@@ -7,11 +7,13 @@
   <form (submit)="save()" (change)="save()" class="p-2">
     <div class="form-row">
       <label for="primaryColor">Primary color</label>
-      <input [(colorPicker)]="primaryColor" [style.background]="primaryColor" (colorPickerChange)="save()" />
+      <input [(colorPicker)]="primaryColor" cpPosition="bottom" [style.background]="primaryColor" (colorPickerChange)="save()"
+      />
     </div>
     <div class="form-row">
       <label for="secondaryColor">Secondary color</label>
-      <input [(colorPicker)]="secondaryColor" [style.background]="secondaryColor" (colorPickerChange)="save()" />
+      <input [(colorPicker)]="secondaryColor" cpPosition="bottom" [style.background]="secondaryColor" (colorPickerChange)="save()"
+      />
     </div>
     <div class="form-row">
       <label for="borderRadius">borderRadius</label>

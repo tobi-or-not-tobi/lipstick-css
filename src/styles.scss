@@ -13,7 +13,7 @@ body {
 
 // (override) standard variables (in this case a standard bootstrap variable)
 $primary: #ff0099;
-$secondary: #ffddee;
+$secondary: #9d8792;
 
 // import boostrap so that the pre-process will build bootstrap with our customer variables
 @import 'node_modules/bootstrap/scss/bootstrap';
@@ -119,6 +119,26 @@ $secondary: #ffddee;
     }
     &-secondary {
         border-color: var(--secondary-color) !important;
+    }
+}
+
+// carousel
+.carousel {
+    &-indicators .active {
+        background-color: var(--primary-color);
+    }
+    &-caption {
+        color: var(--primary-color);
+    }
+
+    &-control-prev-icon,
+    &-control-next-icon {
+        border: solid 2px var(--primary-color);
+        border-radius: 100px;
+        background-origin: content-box;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
     }
 }
 
