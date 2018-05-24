@@ -1,15 +1,21 @@
-<div class="jumbotron">
-
-  <form (submit)="save()" (change)="save()">
+<div class="bg-light p-4">
+  <h3 class="text-primary">Runtime configuration</h3>
+  <p class="text-muted">
+    This section provides runtime configuration of a few inputs, demonstrating the styles are dynamically bound to CSS vars
+  </p>
+  <form (submit)="save()" (change)="save()" class="p-2">
     <div class="form-row">
-      <div class="col">
-        <label for="primaryColor">Primary color</label>
-        <input type="color" class="form-control" id="primaryColor" name="primary" [(ngModel)]="primaryColor" placeholder="Primary color">
-      </div>
-      <div class="col">
-        <label for="borderRadius">borderRadius</label>
-        <input class="form-control" id="borderRadius" name="primary" [(ngModel)]="borderRadius" placeholder="Border Radius">
-      </div>
+      <label for="primaryColor">Primary color</label>
+      <input type="color" class="form-control" id="primaryColor" name="primary" [(ngModel)]="primaryColor" placeholder="Primary color">
     </div>
+    <div class="form-row">
+      <label for="secondaryColor">Secondary color</label>
+      <input type="color" class="form-control" id="secondaryColor" name="secondary" [(ngModel)]="secondaryColor" placeholder="Secondary color">
+    </div>
+    <div class="form-row">
+      <label for="borderRadius">borderRadius</label>
+      <input class="form-control" id="borderRadius" name="primary" [(ngModel)]="borderRadius" placeholder="Border Radius">
+    </div>
+
   </form>
 </div>

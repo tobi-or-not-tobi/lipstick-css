@@ -1,3 +1,9 @@
-<div>
-  sample banner component
-</div>
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide *ngFor="let image of images">
+    <img [src]="image.url">
+    <div class="carousel-caption">
+      <h3>{{image.caption}}</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>

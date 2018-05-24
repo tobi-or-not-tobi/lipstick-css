@@ -13,6 +13,7 @@ body {
 
 // (override) standard variables (in this case a standard bootstrap variable)
 $primary: red;
+$secondary: blue;
 
 // import boostrap so that the pre-process will build bootstrap with our customer variables
 @import 'node_modules/bootstrap/scss/bootstrap';
@@ -36,6 +37,8 @@ $primary: red;
     (
         --primary-color: $primary,
         --primary-darken-color: darken($primary, 7.5%),
+        --secondary-color: $secondary,
+        --secondary-darken-color: darken($secondary, 7.5%),
         --border-radius: $border-radius,
         --border-radius-lg: $border-radius-lg,
         --border-radius-sm: $border-radius-lg
@@ -43,30 +46,80 @@ $primary: red;
 );
 
 // override bootstrap specific rules, using css vars
+// buttons
 .btn {
     border-radius: var(--border-radius);
-}
-.btn-primary {
-    background-color: var(--primary-color);
-}
-.btn-primary:hover {
-    background-color: var(--primary-darken-color);
-    border-color: var(--primary-darken-color);
-}
-.btn-outline-primary {
-    color: var(--primary-color);
-}
-.btn-primary,
-.btn-outline-primary {
-    border-color: var(--primary-color);
-}
-.btn-outline-primary:hover,
-.btn-primary:hover {
-    border-color: var(--primary-color);
+    &-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        &:hover,
+        &:not(:disabled):not(.disabled):active {
+            background-color: var(--primary-darken-color);
+            border-color: var(--primary-darken-color);
+        }
+    }
+
+    &-secondary {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+        &:hover,
+        &:not(:disabled):not(.disabled):active {
+            background-color: var(--secondary-darken-color);
+            border-color: var(--secondary-darken-color);
+        }
+    }
+
+    &-outline {
+        &-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            &:hover,
+            &:not(:disabled):not(.disabled):active {
+                background-color: var(--primary-color);
+                border-color: var(--primary-darken-color);
+            }
+        }
+        &-secondary {
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            &:hover,
+            &:not(:disabled):not(.disabled):active {
+                background-color: var(--secondary-color);
+                border-color: var(--secondary-darken-color);
+            }
+        }
+    }
 }
 
-.btn-outline-primary:hover {
-    background-color: var(--primary-color);
+// text colors
+.text {
+    &-primary {
+        color: var(--primary-color) !important;
+    }
+    &-secondary {
+        color: var(--secondary-color) !important;
+    }
+}
+
+// badge
+.badge {
+    border-radius: var(--border-radius);
+    &-primary {
+        background-color: var(--primary-color);
+    }
+    &-secondary {
+        background-color: var(--secondary-color);
+    }
+}
+
+// border
+.border {
+    &-primary {
+        border-color: var(--primary-color) !important;
+    }
+    &-secondary {
+        border-color: var(--secondary-color) !important;
+    }
 }
 
 // fix bootstrap color input

@@ -1,15 +1,30 @@
-<app-css-var-config></app-css-var-config>
-<h1>Lipstick css</h1>
-<div class="container p-3">
-    <div class="row">
-        <div class="col-sm">
-            <y-product-rating></y-product-rating>
+<div class="container">
+    <h1>
+        Lipstick CSS
+        <small class="text-muted">add a little makeup</small>
+    </h1>
+    <div class="row pt-3 border-top border-secondary ">
+        <div class="col-8">
+            <h3 class="text-primary">
+                Fancy Product title
+                <span class="badge badge-secondary">New</span>
+            </h3>
+            <div class="container p-2">
+                <div class="row">
+                    <div class="col">
+                        <y-product-rating></y-product-rating>
+                    </div>
+                    <div class="col-6">
+                        <y-add-to-card class="float-right"></y-add-to-card>
+                    </div>
+                </div>
+            </div>
+            <y-banner></y-banner>
         </div>
-        <div class="col-sm">
-            <y-add-to-card></y-add-to-card>
+        <div class="col-4">
+            <app-css-var-config></app-css-var-config>
         </div>
+
     </div>
+
 </div>
-
-
-<y-banner></y-banner>

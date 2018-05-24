@@ -1,27 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-css-var-config',
     templateUrl: './css-var-config.component.html',
     styleUrls: ['./css-var-config.component.scss']
 })
-export class CssVarConfigComponent implements OnInit {
+export class CssVarConfigComponent {
     primaryColor;
+    secondaryColor;
     borderRadius;
     constructor() {}
 
-    ngOnInit() {}
-
     save(event) {
         if (this.primaryColor) {
-            document.documentElement.style.setProperty(`--primary-color`, this.primaryColor);
+            document.documentElement.style.setProperty('--primary-color', this.primaryColor);
             document.documentElement.style.setProperty(
                 `--primary-darken-color`,
                 this.lightenColor(this.primaryColor, -15)
             );
         }
+        if (this.secondaryColor) {
+            document.documentElement.style.setProperty('--secondary-color', this.secondaryColor);
+            document.documentElement.style.setProperty(
+                `--secondary-darken-color`,
+                this.lightenColor(this.secondaryColor, -15)
+            );
+        }
         if (this.borderRadius) {
-            document.documentElement.style.setProperty(`--border-radius`, this.borderRadius);
+            document.documentElement.style.setProperty('--border-radius', this.borderRadius);
         }
     }
 
@@ -45,7 +51,7 @@ export class CssVarConfigComponent implements OnInit {
         )
             .toString(16)
             .slice(1);
-        console.log(num, value);
+
         return '#' + value;
     }
 }
