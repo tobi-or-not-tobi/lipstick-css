@@ -1,15 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-css-var-config',
     templateUrl: './css-var-config.component.html',
     styleUrls: ['./css-var-config.component.scss']
 })
-export class CssVarConfigComponent {
+export class CssVarConfigComponent implements OnInit {
     primaryColor;
     secondaryColor;
     borderRadius;
+
     constructor() {}
+
+    ngOnInit() {
+        const bodyStyles = window.getComputedStyle(document.body);
+        this.primaryColor = bodyStyles.getPropertyValue('--primary-color');
+        this.secondaryColor = bodyStyles.getPropertyValue('--secondary-color');
+        console.log(this.primaryColor);
+        console.log(this.secondaryColor);
+    }
 
     save(event) {
         if (this.primaryColor) {

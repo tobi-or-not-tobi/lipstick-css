@@ -12,8 +12,8 @@ body {
 //////////////////////////////////////////////////////////////////
 
 // (override) standard variables (in this case a standard bootstrap variable)
-$primary: red;
-$secondary: blue;
+$primary: #ff0099;
+$secondary: #ffddee;
 
 // import boostrap so that the pre-process will build bootstrap with our customer variables
 @import 'node_modules/bootstrap/scss/bootstrap';
