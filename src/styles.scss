@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+/** 
+ * Overriding bootstrap with a 2 layer approach
+ * - layer 1: override at build time (i.e. pre-procssing)
+ * - layer 2: override at runtime
+ */
+
+//////////////////////////////////////////////////////////////////
+// 1: override at build time
+//////////////////////////////////////////////////////////////////
+
+// (override) standard variables (in this case a standard bootstrap variable)
+$primary: red;
+
+// import boostrap so that the pre-process will build bootstrap with our customer variables
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+//////////////////////////////////////////////////////////////////
+// 2: override at runtime
+//////////////////////////////////////////////////////////////////
+
+// we use a mixin to access set the css vars
+// based on a sass var
+@mixin css-vars($varMap: null) {
+    @at-root :root {
+        @each $varName, $varValue in $varMap {
+            #{$varName}: #{$varValue};
+        }
+    }
+}
+
+// create css-vars
+@include css-vars((--primary-color: $primary));
+
+// override bootstrap specific rules, using css vars
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
