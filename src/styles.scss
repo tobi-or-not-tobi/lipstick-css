@@ -43,8 +43,10 @@ $primary: red;
 );
 
 // override bootstrap specific rules, using css vars
-.btn-primary {
+.btn {
     border-radius: var(--border-radius);
+}
+.btn-primary {
     background-color: var(--primary-color);
 }
 .btn-primary:hover {

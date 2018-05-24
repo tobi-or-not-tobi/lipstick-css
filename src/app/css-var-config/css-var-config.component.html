@@ -1,6 +1,6 @@
 <div class="jumbotron">
 
-  <form (submit)="save()" (change)="save()" class="border">
+  <form (submit)="save()" (change)="save()">
     <div class="form-row">
       <div class="col">
         <label for="primaryColor">Primary color</label>
@@ -11,6 +11,5 @@
         <input class="form-control" id="borderRadius" name="primary" [(ngModel)]="borderRadius" placeholder="Border Radius">
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
