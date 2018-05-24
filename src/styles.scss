@@ -1,3 +1,6 @@
+body {
+    padding: 20px;
+}
 /** 
  * Overriding bootstrap with a 2 layer approach
  * - layer 1: override at build time (i.e. pre-procssing)
@@ -29,14 +32,43 @@ $primary: red;
 }
 
 // create css-vars
-@include css-vars((--primary-color: $primary));
+@include css-vars(
+    (
+        --primary-color: $primary,
+        --primary-darken-color: darken($primary, 7.5%),
+        --border-radius: $border-radius,
+        --border-radius-lg: $border-radius-lg,
+        --border-radius-sm: $border-radius-lg
+    )
+);
 
 // override bootstrap specific rules, using css vars
+.btn-primary {
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: var(--primary-darken-color);
+    border-color: var(--primary-darken-color);
+}
 .btn-outline-primary {
     color: var(--primary-color);
+}
+.btn-primary,
+.btn-outline-primary {
     border-color: var(--primary-color);
 }
+.btn-outline-primary:hover,
+.btn-primary:hover {
+    border-color: var(--primary-color);
+}
+
 .btn-outline-primary:hover {
     background-color: var(--primary-color);
-    border-color: var(--primary-color);
+}
+
+// fix bootstrap color input
+// see https://github.com/twbs/bootstrap/issues/18786
+input[type='color'].form-control {
+    height: $input-height;
 }
