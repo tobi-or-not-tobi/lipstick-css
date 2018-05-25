@@ -1,3 +1,5 @@
+<link *ngIf="fontUrl" rel="stylesheet" [href]='sanitizer.bypassSecurityTrustResourceUrl(fontUrl)'>
+
 <div class="bg-light p-4">
   <h3 class="text-primary">Runtime theme configuration</h3>
   <p class="text-muted">
@@ -13,6 +15,12 @@
       <label for="secondaryColor">Secondary color</label>
       <input [(colorPicker)]="secondaryColor" cpPosition="bottom" [style.background]="secondaryColor" (colorPickerChange)="save()"
       />
+    </div>
+    <div class="form-group">
+      <label for="fontFamily">Font Family</label>
+      <select class="form-control" name="fontFamily" [(ngModel)]="fontFamily" id="fontFamily">
+        <option *ngFor="let font of fonts" [value]="font">{{font}}</option>
+      </select>
     </div>
     <div class="form-row">
       <label for="borderRadius">borderRadius</label>

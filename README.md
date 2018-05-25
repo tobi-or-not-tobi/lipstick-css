@@ -54,6 +54,7 @@ This initial work already brings up some questions that need to be tackled going
 *   How do we style an external web component? These components have been build and will most likely be reused by a number of apps.
 *   Do we need to partially rebuild external UI libraries, if we want to support CSS variables?
 *   Where to maintain the CSS rules?
+*   loading fonts requires a bit more then just css vars. If we allow to specify a new font family, then we need to know where to load the font from. This can be solved by a standard list of fonts supported.
 
 ## Other tools and techniques
 

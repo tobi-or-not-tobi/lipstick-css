@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-css-var-config',
@@ -8,15 +9,37 @@ import { Component, OnInit } from '@angular/core';
 export class CssVarConfigComponent implements OnInit {
     primaryColor;
     secondaryColor;
+    fontFamily;
+    fonts = [
+        'Karla',
+        'Lora',
+        'Frank Ruhl Libre',
+        'Playfair Display',
+        'Archivo',
+        'Spectral',
+        'Fjalla One',
+        'Roboto',
+        'Montserrat',
+        'Rubik',
+        'Source Sans',
+        'Cardo',
+        'Cormorant',
+        'Yatra One',
+        'Arvo',
+        'Lato'
+    ];
     borderRadius;
 
-    constructor() {}
+    fontUrl;
+
+    constructor(public sanitizer: DomSanitizer) {}
 
     ngOnInit() {
-        const bodyStyles = window.getComputedStyle(document.body);
-        this.primaryColor = bodyStyles.getPropertyValue('--primary');
-        this.secondaryColor = bodyStyles.getPropertyValue('--secondary');
-        this.borderRadius = bodyStyles.getPropertyValue('--radius');
+        this.primaryColor = this.getCssVar('--primary');
+        this.secondaryColor = this.getCssVar('--secondary');
+        this.fontFamily = this.getCssVar('--font');
+        this.fontFamily = this.getCssVar('--font');
+        this.borderRadius = this.getCssVar('--radius');
     }
 
     save(event) {
@@ -34,9 +57,21 @@ export class CssVarConfigComponent implements OnInit {
                 this.lightenColor(this.secondaryColor, -15)
             );
         }
+        if (this.fontFamily) {
+            this.fontUrl = `https://fonts.googleapis.com/css?family=${this.fontFamily}`;
+            document.documentElement.style.setProperty('--font-family', this.fontFamily);
+        }
         if (this.borderRadius) {
             document.documentElement.style.setProperty('--border-radius', this.borderRadius);
         }
+    }
+
+    getCssVar(name: string) {
+        const bodyStyles = window.getComputedStyle(document.body);
+        let value = bodyStyles.getPropertyValue(name).trim();
+        // in case this is a string, we need to get ride of the quotes
+        value = value.replace(/"/g, '');
+        return value;
     }
 
     private lightenColor(color, percent) {

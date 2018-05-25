@@ -30,6 +30,11 @@ $secondary: #9d8792;
     --secondary: var(--secondary-color, #{$secondary});
     --secondary-darken: var(--secondary-darken-color, #{darken($secondary, 7.5%)});
     --radius: var(--border-radius, #{$border-radius});
+    --font: var(--font-family, 'Roboto');
+}
+
+body {
+    font-family: var(--font);
 }
 
 // override bootstrap specific rules, using css vars
