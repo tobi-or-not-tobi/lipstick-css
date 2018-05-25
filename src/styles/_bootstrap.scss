@@ -1,0 +1,13 @@
+/**
+ * import bootstrap so that the pre-process will build bootstrap with our customer variables
+ 
+ * The main goal of this file is to replace bootstrap system with CSS vars, so that we can 
+ * manipulate the colors at runtime. 
+ */
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+@import './bootstrap/_badge';
+@import './bootstrap/_button';
+@import './bootstrap/_text';
+@import './bootstrap/_badge';
+@import './bootstrap/_border';

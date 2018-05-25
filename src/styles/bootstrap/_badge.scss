@@ -1,0 +1,10 @@
+// badge
+.badge {
+    border-radius: var(--radius);
+    &-primary {
+        background-color: var(--primary);
+    }
+    &-secondary {
+        background-color: var(--secondary);
+    }
+}
