@@ -24,68 +24,55 @@ $secondary: #9d8792;
 
 // we use a mixin to access set the css vars
 // based on a sass var
-@mixin css-vars($varMap: null) {
-    @at-root :root {
-        @each $varName, $varValue in $varMap {
-            #{$varName}: #{$varValue};
-        }
-    }
+:root {
+    --primary: var(--primary-color, #{$primary});
+    --primary-darken: var(--primary-darken-color, #{darken($primary, 7.5%)});
+    --secondary: var(--secondary-color, #{$secondary});
+    --secondary-darken: var(--secondary-darken-color, #{darken($secondary, 7.5%)});
+    --radius: var(--border-radius, #{$border-radius});
 }
-
-// create css-vars
-@include css-vars(
-    (
-        --primary-color: $primary,
-        --primary-darken-color: darken($primary, 7.5%),
-        --secondary-color: $secondary,
-        --secondary-darken-color: darken($secondary, 7.5%),
-        --border-radius: $border-radius,
-        --border-radius-lg: $border-radius-lg,
-        --border-radius-sm: $border-radius-lg
-    )
-);
 
 // override bootstrap specific rules, using css vars
 // buttons
 .btn {
-    border-radius: var(--border-radius, $border-radius);
+    border-radius: var(--radius);
     &-primary {
-        background-color: var(--primary-color, $primary);
-        border-color: var(--primary-color, $primary);
+        background-color: var(--primary);
+        border-color: var(--primary);
         &:hover,
         &:not(:disabled):not(.disabled):active {
-            background-color: var(--primary-darken-color, darken($primary, 7.5%));
-            border-color: var(--primary-darken-color, darken($primary, 7.5%));
+            background-color: var(--primary-darken);
+            border-color: var(--primary-darken);
         }
     }
 
     &-secondary {
-        background-color: var(--secondary-color, $secondary);
-        border-color: var(--secondary-color, $secondary);
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
         &:hover,
         &:not(:disabled):not(.disabled):active {
-            background-color: var(--secondary-darken-color, darken($primary, 7.5%));
-            border-color: var(--secondary-darken-color, darken($primary, 7.5%));
+            background-color: var(--secondary-darken);
+            border-color: var(--secondary-darken);
         }
     }
 
     &-outline {
         &-primary {
-            color: var(--primary-color, $primary);
-            border-color: var(--primary-color, $primary);
+            color: var(--primary);
+            border-color: var(--primary);
             &:hover,
             &:not(:disabled):not(.disabled):active {
-                background-color: var(--primary-color, $primary);
-                border-color: var(--primary-darken-color, darken($primary, 7.5%));
+                background-color: var(--primary);
+                border-color: var(--primary-darken);
             }
         }
         &-secondary {
-            color: var(--secondary-color, $secondary);
-            border-color: var(--secondary-color, $secondary);
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
             &:hover,
             &:not(:disabled):not(.disabled):active {
-                background-color: var(--secondary-color, $secondary);
-                border-color: var(--secondary-darken-color, darken($primary, 7.5%));
+                background-color: var(--secondary-color);
+                border-color: var(--secondary-darken);
             }
         }
     }
@@ -94,50 +81,31 @@ $secondary: #9d8792;
 // text colors
 .text {
     &-primary {
-        color: var(--primary-color, $primary) !important;
+        color: var(--primary) !important;
     }
     &-secondary {
-        color: var(--secondary-color, $secondary) !important;
+        color: var(--secondary-color) !important;
     }
 }
 
 // badge
 .badge {
-    border-radius: var(--border-radius, $border-radius);
+    border-radius: var(--radius);
     &-primary {
-        background-color: var(--primary-color, $primary);
+        background-color: var(--primary);
     }
     &-secondary {
-        background-color: var(--secondary-color, $secondary);
+        background-color: var(--secondary-color);
     }
 }
 
 // border
 .border {
     &-primary {
-        border-color: var(--primary-color, $primary) !important;
+        border-color: var(--primary) !important;
     }
     &-secondary {
-        border-color: var(--secondary-color, $secondary) !important;
-    }
-}
-
-// carousel
-.carousel {
-    &-caption {
-        color: var(--primary-color, $primary);
-    }
-    &-indicators .active {
-        background-color: var(--primary-color, $primary);
-    }
-    &-control-prev-icon,
-    &-control-next-icon {
-        border: solid 2px var(--primary-color, $primary);
-        border-radius: 100px;
-        background-origin: content-box;
-        width: 30px;
-        height: 30px;
-        padding: 5px;
+        border-color: var(--secondary-color) !important;
     }
 }
 
