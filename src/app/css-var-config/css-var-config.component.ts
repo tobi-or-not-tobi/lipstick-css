@@ -14,10 +14,9 @@ export class CssVarConfigComponent implements OnInit {
 
     ngOnInit() {
         const bodyStyles = window.getComputedStyle(document.body);
-        this.primaryColor = bodyStyles.getPropertyValue('--primary-color');
-        this.secondaryColor = bodyStyles.getPropertyValue('--secondary-color');
-        console.log(this.primaryColor);
-        console.log(this.secondaryColor);
+        this.primaryColor = bodyStyles.getPropertyValue('--primary');
+        this.secondaryColor = bodyStyles.getPropertyValue('--secondary');
+        this.borderRadius = bodyStyles.getPropertyValue('--radius');
     }
 
     save(event) {
@@ -41,7 +40,7 @@ export class CssVarConfigComponent implements OnInit {
     }
 
     private lightenColor(color, percent) {
-        color = color.slice(1);
+        color = color.trim().slice(1);
 
         var num = parseInt(color, 16),
             amt = Math.round(2.55 * percent),
@@ -49,7 +48,7 @@ export class CssVarConfigComponent implements OnInit {
             B = ((num >> 8) & 0x00ff) + amt,
             G = (num & 0x0000ff) + amt;
         if (!num) {
-            console.error('could not transform the color');
+            console.error('could not transform the color', color, num);
             return color;
         }
         const value = (
@@ -60,7 +59,6 @@ export class CssVarConfigComponent implements OnInit {
         )
             .toString(16)
             .slice(1);
-
         return '#' + value;
     }
 }
