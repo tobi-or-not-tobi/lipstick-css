@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "description": "Style library containing global styles",
   "scripts": {
-    "build": "node-sass ./src/ -o ./dist/css --include-path ./src/styles -w"
+    "build": "node-sass ./scss/ -o ./dist --include-path ./ -w",
+    "build:compressed": "node-sass ./scss/ -o ./dist --include-path ./ --output-style compressed -w"
+  },
+  "peerDependencies": {
+    "bootstrap": "^4.1.1"
   },
   "devDependencies": {
     "node-sass": "^4.9.0"

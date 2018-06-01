@@ -1,18 +1,22 @@
 @import '~src/styles/_variables';
-@import '~src/styles/_bootstrap';
+// @import 'node_modules/bootstrap/scss/bootstrap';
+
+@import 'projects/core-styles/scss/styles';
+
+// @import '~src/styles/_bootstrap';
 
 // set CSS vars for the root element we use a fallback color in this root
 // btw bootstrap is having some of those vars, but not using them unfortunately
 :root {
-    --primary: var(--primary-color, #{$primary});
-    --primary-darken: var(--primary-darken-color, #{darken($primary, 7.5%)});
-    --secondary: var(--secondary-color, #{$secondary});
-    --secondary-darken: var(--secondary-darken-color, #{darken($secondary, 7.5%)});
-    --radius: var(--border-radius, #{$border-radius});
-    --font: var(--font-family, 'Roboto');
+  --primary: var(--primary-color, #{$primary});
+  --primary-darken: var(--primary-darken-color, #{darken($primary, 7.5%)});
+  --secondary: var(--secondary-color, #{$secondary});
+  --secondary-darken: var(--secondary-darken-color, #{darken($secondary, 7.5%)});
+  --radius: var(--border-radius, #{$border-radius});
+  --font: var(--font-family, 'Roboto');
 }
 
 body {
-    padding: 20px;
-    font-family: var(--font);
+  padding: 20px;
+  font-family: var(--font);
 }
