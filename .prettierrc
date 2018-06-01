@@ -2,12 +2,8 @@
   "printWidth": 120,
   "singleQuote": true,
   "useTabs": false,
-  "tabWidth": 4,
+  "tabWidth": 2,
   "semi": true,
   "bracketSpacing": true,
-  "prettier.cssEnable": [
-    "css",
-    "less",
-    "sass"
-  ]
+  "prettier.cssEnable": ["sass"]
 }

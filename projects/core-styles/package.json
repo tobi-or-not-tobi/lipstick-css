@@ -1,0 +1,11 @@
+{
+  "name": "core-styles",
+  "version": "0.0.0",
+  "description": "Style library containing global styles",
+  "scripts": {
+    "build": "node-sass ./src/ -o ./dist/css --include-path ./src/styles -w"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.0"
+  }
+}
