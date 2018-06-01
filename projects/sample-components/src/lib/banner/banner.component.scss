@@ -1,22 +1,22 @@
 ngb-carousel {
-    padding: var(--padding);
+  padding: var(--padding);
 }
 
 // carousel
 .carousel {
-    &-caption {
-        color: var(--primary);
-    }
-    &-indicators .active {
-        background-color: var(--primary);
-    }
-    &-control-prev-icon,
-    &-control-next-icon {
-        border: solid 2px var(--primary);
-        border-radius: 100px;
-        background-origin: content-box;
-        width: 30px;
-        height: 30px;
-        padding: 5px;
-    }
+  &-caption {
+    color: var(--primary-color);
+  }
+  &-indicators .active {
+    background-color: var(--primary-color);
+  }
+  &-control-prev-icon,
+  &-control-next-icon {
+    border: solid 2px var(--primary-color);
+    border-radius: 100px;
+    background-origin: content-box;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+  }
 }

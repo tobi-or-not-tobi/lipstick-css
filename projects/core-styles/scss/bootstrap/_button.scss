@@ -1,43 +1,43 @@
 .btn {
-    border-radius: var(--radius);
+  border-radius: var(--radius);
+  &-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    &:hover,
+    &:not(:disabled):not(.disabled):active {
+      background-color: var(--primary-darken);
+      border-color: var(--primary-darken);
+    }
+  }
+
+  &-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    &:hover,
+    &:not(:disabled):not(.disabled):active {
+      background-color: var(--secondary-darken);
+      border-color: var(--secondary-darken);
+    }
+  }
+
+  &-outline {
     &-primary {
-        background-color: var(--primary);
-        border-color: var(--primary);
-        &:hover,
-        &:not(:disabled):not(.disabled):active {
-            background-color: var(--primary-darken);
-            border-color: var(--primary-darken);
-        }
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+      &:hover,
+      &:not(:disabled):not(.disabled):active {
+        background-color: var(--primary-color);
+        border-color: var(--primary-darken);
+      }
     }
-
     &-secondary {
+      color: var(--secondary-color);
+      border-color: var(--secondary-color);
+      &:hover,
+      &:not(:disabled):not(.disabled):active {
         background-color: var(--secondary-color);
-        border-color: var(--secondary-color);
-        &:hover,
-        &:not(:disabled):not(.disabled):active {
-            background-color: var(--secondary-darken);
-            border-color: var(--secondary-darken);
-        }
+        border-color: var(--secondary-darken);
+      }
     }
-
-    &-outline {
-        &-primary {
-            color: var(--primary);
-            border-color: var(--primary);
-            &:hover,
-            &:not(:disabled):not(.disabled):active {
-                background-color: var(--primary);
-                border-color: var(--primary-darken);
-            }
-        }
-        &-secondary {
-            color: var(--secondary-color);
-            border-color: var(--secondary-color);
-            &:hover,
-            &:not(:disabled):not(.disabled):active {
-                background-color: var(--secondary-color);
-                border-color: var(--secondary-darken);
-            }
-        }
-    }
+  }
 }

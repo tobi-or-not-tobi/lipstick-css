@@ -1,8 +1,8 @@
 .text {
-    &-primary {
-        color: var(--primary) !important;
-    }
-    &-secondary {
-        color: var(--secondary-color) !important;
-    }
+  &-primary {
+    color: var(--primary-color) !important;
+  }
+  &-secondary {
+    color: var(--secondary-color) !important;
+  }
 }

@@ -1,8 +1,8 @@
 .border {
-    &-primary {
-        border-color: var(--primary) !important;
-    }
-    &-secondary {
-        border-color: var(--secondary-color) !important;
-    }
+  &-primary {
+    border-color: var(--primary-color) !important;
+  }
+  &-secondary {
+    border-color: var(--secondary-color) !important;
+  }
 }
