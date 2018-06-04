@@ -1,0 +1,17 @@
+<h3 class="border-top border-secondary">Shadow DOM
+  <span class="badge badge-secondary">New</span>
+</h3>
+<p>
+  This is component is using the shadow dom. While it is not
+  <a class="text-primary" href="https://caniuse.com/#feat=shadowdomv1">supported in most browsers</a> yet, we use it here to demonstrate how dynamic theming (doesn't) work with shadow dom.
+</p>
+<ul>
+  <li>Shadow DOM provides style encapsulation
+    <br/>
+    <small>it doesn't inherit styles from the shadow host, nor does it inluence the shadow host with its own styles</small>
+  </li>
+  <li>Shadow DOM does inherit CSS Variables</li>
+  <li>Shadow DOM does inherit styling from the hosting body</li>
+  <li>New specs are on their way to allow for theming elements in the shadow dom (::part and ::theme)</li>
+  <li>It will require a significant change from UI libraries to come up with an approach to support shadow DOMs</li>
+</ul>
