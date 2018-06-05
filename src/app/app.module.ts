@@ -2,7 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
-import { BannerModule, AddToCardModule, ProductRatingModule, ProductIntroModule } from 'sample-components';
+import {
+  BannerModule,
+  AddToCardModule,
+  ProductRatingModule,
+  ProductIntroModule,
+  ProductFactsModule
+} from 'sample-components';
 import { CssVarConfigModule } from './css-var-config/css-var-config.module';
 
 @NgModule({
@@ -14,7 +20,8 @@ import { CssVarConfigModule } from './css-var-config/css-var-config.module';
     BannerModule,
     AddToCardModule,
     ProductRatingModule,
-    ProductIntroModule
+    ProductIntroModule,
+    ProductFactsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

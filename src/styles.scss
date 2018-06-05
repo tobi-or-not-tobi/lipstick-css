@@ -6,3 +6,21 @@ body {
   padding: 20px;
   font-family: var(--font);
 }
+
+.custom.style {
+  display: block;
+  background: #eee;
+  padding: 20px;
+  margin: 10px 0;
+
+  p {
+    color: var(--primary-color);
+    text-transform: uppercase;
+  }
+  pre {
+    background: #fff;
+  }
+  button {
+    border-top-right-radius: 100px;
+  }
+}

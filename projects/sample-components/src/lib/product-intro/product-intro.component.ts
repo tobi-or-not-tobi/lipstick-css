@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
 @Component({
   selector: 'y-product-intro',
@@ -7,7 +7,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.Native
 })
 export class ProductIntroComponent implements OnInit {
-  constructor() {}
+  @Input() cssClass: string;
 
-  ngOnInit() {}
+  constructor() { }
+
+  ngOnInit() { }
 }

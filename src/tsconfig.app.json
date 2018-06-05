@@ -5,13 +5,9 @@
     "module": "es2015",
     "types": [],
     "paths": {
-      "sample-components": [
-        "projects/sample-components/src/public_api"
-      ]
+      "sample-components": ["projects/sample-components/src/public_api"],
+      "core-style": ["projects/core-styles"]
     }
   },
-  "exclude": [
-    "src/test.ts",
-    "**/*.spec.ts"
-  ]
+  "exclude": ["src/test.ts", "**/*.spec.ts"]
 }
